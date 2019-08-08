@@ -72,8 +72,8 @@ public enum Browser {
 	/**
 	 * 360 浏览器
 	 */
-	QIHU (Manufacturer.QIHOO, null, 1300, "360", new String[]{"360SE", "360EE", "QIHU","QIHOO","QH"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.OTHER, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
-	QIHU_IE (Manufacturer.QIHOO, Browser.QIHU, 1301, "360 IE", new String[]{"MSIE", "Trident", "IE "}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.OTHER, PatternBasedVersionFetcher.IE_VERSION_FETCHER),
+	QIHU (Manufacturer.QIHOO, null, 1300, "360", new String[]{"360SE", "360EE", "QIHU","QIHOO","QH"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
+	QIHU_IE (Manufacturer.QIHOO, Browser.QIHU, 1301, "360 IE", new String[]{"MSIE", "Trident", "IE "}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT, PatternBasedVersionFetcher.IE_VERSION_FETCHER),
 	QIHU_MOBILE (Manufacturer.QIHOO, null, 1302, "360", new String[]{"360se", "360ee", "QIHU","QiHoo","QH"}, null, BrowserType.MOBILE_BROWSER, RenderingEngine.WEBKIT, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
 	/**
 	 *搜狗浏览器
