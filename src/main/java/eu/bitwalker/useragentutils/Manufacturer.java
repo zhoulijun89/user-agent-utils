@@ -140,9 +140,32 @@ public enum Manufacturer {
 	/**
 	 * Linux Foundation, owner of the Tizen Project
 	 */
-	LINUX_FOUNDATION(26,"Linux Foundation");
-	
-	
+	LINUX_FOUNDATION(26,"Linux Foundation"),
+
+	/**
+	 * 腾讯公司
+	 */
+	TENCENT(27, "Tencent"),
+	/**
+	 * UC浏览器公司
+	 */
+	UC(28, "UC"),
+	/**
+	 * 搜狗公司
+	 */
+	SOGO(29, "Sougo"),
+	/**
+	 * 奇虎360
+	 */
+	QIHOO(30, "QiHoo 360"),
+	/**
+	 * 猎豹
+	 */
+	LIEBAO(31, "liebao"),
+	/**
+	 * 世界之窗
+	 */
+	THE_WORLD(32, "The World");
 	
 	private final short id;
 	private final String name;

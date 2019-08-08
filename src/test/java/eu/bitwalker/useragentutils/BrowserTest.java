@@ -37,15 +37,13 @@
 
 package eu.bitwalker.useragentutils;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author harald
@@ -723,6 +721,20 @@ public class BrowserTest {
 		testAgents(airApp, Browser.ADOBE_AIR);
 		testAgents(blackberry10, Browser.BLACKBERRY10);
 		testAgents(vivaldi, Browser.VIVALDI);
+		//国内浏览器
+		testAgents (new String[]{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36"},Browser.UC);
+		testAgents (new String[]{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0"},Browser.SOGO);
+		testAgents (new String[]{"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; {D9D54F49-E51C-445e-92F2-1EE3C2313240}; SE 2.X MetaSr 1.0)"},Browser.SOGO_IE);
+		testAgents (new String[]{"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; {D9D54F49-E51C-445e-92F2-1EE3C2313240}; Core/1.53.5482.400 QQBrowser/9.7.13292.400)"},Browser.QQ_IE);
+		testAgents (new String[]{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.5482.400 QQBrowser/9.7.13292.400"},Browser.QQ);
+		testAgents (new String[]{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36 LBBROWSER"},Browser.LIEBAO);
+		testAgents (new String[]{"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; {D9D54F49-E51C-445e-92F2-1EE3C2313240};  TheWorld 7)"},Browser.THE_WORLD_IE);
+		testAgents (new String[]{"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.7.5000"},Browser.MAXTHON);
+		//国内手机浏览器
+		testAgents (new String[]{"Mozilla/5.0 (Linux; U; Android 9; zh-CN; SM-G9650 Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.6.1036 Mobile Safari/537.36"},Browser.UC_MOBILE);
+		testAgents (new String[]{"Mozilla/5.0 (Linux; Android 9; SM-G9650 Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/72.0.3626.121 Mobile Safari/537.36 Sleipnir/3.5.10"},Browser.SLEIPNIR);
+		testAgents (new String[]{"Mozilla/5.0 (Linux; U; Android 9; zh-cn; SM-G9650 Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/9.6 Mobile Safari/537.36"},Browser.QQ_MOBILE);
+		testAgents (new String[]{"Mozilla/5.0 (Linux; Android 9; SM-G9650 Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.106 Mobile Safari/537.36 AWP/2.0 SogouMSE,SogouMobileBrowser/5.22.8"},Browser.SOGO_MOBILE);
 	}
 	
 	@Test

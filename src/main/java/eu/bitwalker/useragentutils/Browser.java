@@ -37,11 +37,11 @@
 
 package eu.bitwalker.useragentutils;
 
+import eu.bitwalker.useragentutils.browser.SafariUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import eu.bitwalker.useragentutils.browser.SafariUtils;
 
 /**
  * Enum constants for most common browsers, including e-mail clients and bots.
@@ -51,6 +51,53 @@ import eu.bitwalker.useragentutils.browser.SafariUtils;
 
 public enum Browser {
 
+	/**
+	 * ============国内浏览器 开始============
+	 */
+	/**
+	 * qq浏览器
+	 */
+	QQ (Manufacturer.TENCENT, null, 1000, "QQBrowser", new String[]{"TencentTraveler", "Tencent", "QQBrowser", "QQ","MQQBrowser"},new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT,new PatternBasedVersionFetcher ("QQBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	QQ_IE (Manufacturer.TENCENT, QQ, 1001, "QQBrowser IE", new String[]{"MSIE", "Trident", "IE "},new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT,new PatternBasedVersionFetcher ("QQBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	QQ_MOBILE (Manufacturer.TENCENT, Browser.QQ, 1002, "MQQBrowser", new String[]{"MQQBrowser"},null, BrowserType.MOBILE_BROWSER, RenderingEngine.WEBKIT,new PatternBasedVersionFetcher ("MQQBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	/**
+	 * 傲游浏览器
+	 */
+	MAXTHON (Manufacturer.OTHER, null, 1100, "Maxthon", new String[]{"Maxthon"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT, new PatternBasedVersionFetcher ("Maxthon\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	/**
+	 * 世界之窗
+	 */
+	THE_WORLD (Manufacturer.THE_WORLD, null, 1200, "TheWorld", new String[]{"TheWorld", "The World"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT, new PatternBasedVersionFetcher ("TheWorld (([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	THE_WORLD_IE (Manufacturer.THE_WORLD, THE_WORLD, 1201, "TheWorld", new String[]{"MSIE", "Trident", "IE "}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT, new PatternBasedVersionFetcher ("TheWorld (([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	/**
+	 * 360 浏览器
+	 */
+	QIHU (Manufacturer.QIHOO, null, 1300, "360", new String[]{"360SE", "360EE", "QIHU","QIHOO","QH"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.OTHER, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
+	QIHU_IE (Manufacturer.QIHOO, Browser.QIHU, 1301, "360 IE", new String[]{"MSIE", "Trident", "IE "}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.OTHER, PatternBasedVersionFetcher.IE_VERSION_FETCHER),
+	QIHU_MOBILE (Manufacturer.QIHOO, null, 1302, "360", new String[]{"360se", "360ee", "QIHU","QiHoo","QH"}, null, BrowserType.MOBILE_BROWSER, RenderingEngine.WEBKIT, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
+	/**
+	 *搜狗浏览器
+	 */
+	SOGO (Manufacturer.SOGO, null, 1400, "Sogou", new String[]{"MetaSr", " SE ","SogouMSE","SogouMobileBrowser"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
+	SOGO_IE (Manufacturer.SOGO, Browser.SOGO, 1401, "Sogou IE", new String[]{"MSIE", "Trident", "IE "}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT, PatternBasedVersionFetcher.IE_VERSION_FETCHER),
+	SOGO_MOBILE (Manufacturer.SOGO, Browser.SOGO, 1402, "sogou", new String[]{"SogouMSE","SogouMobileBrowser"},null, BrowserType.MOBILE_BROWSER, RenderingEngine.WEBKIT, new PatternBasedVersionFetcher ("SogouMobileBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)")),
+	/**
+	 * 猎豹浏览器
+	 */
+	LIEBAO (Manufacturer.LIEBAO, null, 1500, "Liebao", new String[]{"LBBROWSER"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER, RenderingEngine.WEBKIT, PatternBasedVersionFetcher.CHROME_VERSION_FETCHER),
+	/**
+	 * uc浏览器
+	 */
+	UC (Manufacturer.UC, null, 1600, "UC", new String[]{"UBrowser","UCBrowser"}, new String[]{"Mobile"}, BrowserType.WEB_BROWSER,RenderingEngine.WEBKIT,new PatternBasedVersionFetcher ("UBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	UC_MOBILE (Manufacturer.UC, Browser.UC, 1601, "UC", new String[]{"UCBrowser"},null, BrowserType.MOBILE_BROWSER,RenderingEngine.WEBKIT, new PatternBasedVersionFetcher ("UCBrowser\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)")),
+	/**
+	 * 神马浏览器
+	 */
+	SLEIPNIR (Manufacturer.OTHER, null, 1700, "Sleipnir", new String[]{"Sleipnir"},null, BrowserType.MOBILE_BROWSER,RenderingEngine.WEBKIT, new PatternBasedVersionFetcher ("Sleipnir\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)")),
+
+	/**
+	 *  ============国内浏览器 结束============
+	 */
 	/**
 	 * Outlook email client
 	 */
